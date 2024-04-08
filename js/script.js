@@ -5,21 +5,27 @@ Bonus
 Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 */
 
-const {createApp} = Vue;
+const { createApp } = Vue;
 createApp({
-    data(){
-        return{
-            mails:null,
+    data() {
+        return {
+            mails: [],
+            numMails: 10,
         }
     },
-    method:{
-        getMails(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res)=>{
-
-        })
-    }
-    },
-    mounted(){
-
-    }
-}).mount('#app')
+    method: {
+        getMails() {
+            for (let i = 0; i < this.numMails;i++){
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res) => {
+                    const mail = res.data.numMails;
+                    if(this.mails < this.numMails){
+                        this.mails.push(mail)
+                    }
+                
+                })
+            }
+            }
+        },
+        mounted() {
+        }
+    }).mount('#app');
