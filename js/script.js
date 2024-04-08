@@ -21,11 +21,13 @@ createApp({
                 
                 let mail = res.data.response;
                 mailList.push(mail);
+                if(i === this.numMails - 1){
+                    this.mails= [...mailList];
+                }
                 })
             }
             console.log(mailList);
-            this.mails = mailList;
-            console.log(this.mails)
+          
             }
         },
         mounted() {
