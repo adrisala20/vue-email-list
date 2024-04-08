@@ -14,7 +14,7 @@ createApp({
         }
     },
     method: {
-        getMails() {
+        generateMails() {
             for (let i = 0; i < this.numMails;i++){
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res) => {
                     const mail = res.data.numMails;
