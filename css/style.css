@@ -1,3 +1,14 @@
 .as-debug {
     border: 1px solid red;
 }
+ul{
+ list-style: none;
+ line-height: 2em;
+}
+h1,
+button{
+    margin: 25px 0px 25px 27px;
+}
+.fa-solid {
+    color: blue;
+}

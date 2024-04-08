@@ -25,11 +25,12 @@
 
 <body class="bg-body-secondary py-5  ">
    <div id="app" class="container py-3 bg-light  ">
-    <h1>mail</h1>
+    <h1 >Mails generate</h1>
     <ul>
-        <li v-for="mail in mails" :key="mail">{{mail}}</li>
+        <li v-for="mail in mails" :key="mail">
+            <i class="fa-solid fa-envelope pe-2 "></i>{{mail}}</li>
     </ul>
-    <button class="btn btn-info my-3" @click="generateMails">genera mails</button>
+    <button class="btn btn-info" @click="generateMails">Genera Mails</button>
    </div>
 
 
