@@ -13,19 +13,22 @@ createApp({
             numMails: 10,
         }
     },
-    method: {
-        generateMails() {
-            for (let i = 0; i < this.numMails;i++){
+    methods: {
+        generateMails(){
+            let mailList = [];
+            for (let i=0; i<this.numMails; i++){
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((res) => {
-                    const mail = res.data.numMails;
-                    if(this.mails < this.numMails){
-                        this.mails.push(mail)
-                    }
                 
+                let mail = res.data.response;
+                mailList.push(mail);
                 })
             }
+            console.log(mailList);
+            this.mails = mailList;
+            console.log(this.mails)
             }
         },
         mounted() {
+            this.generateMails();
         }
     }).mount('#app');

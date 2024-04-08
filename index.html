@@ -27,9 +27,9 @@
    <div id="app" class="container py-3 bg-light  ">
     <h1>mail</h1>
     <ul>
-        <li v-for="(item,index) in mails"></li>
+        <li v-for="mail in mails" :key="mail">{{mail}}</li>
     </ul>
-    <button class="btn btn-info my-3" @click="generateMails()">genera mail</button>
+    <button class="btn btn-info my-3" @click="generateMails">genera mails</button>
    </div>
 
 
